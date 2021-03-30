@@ -20,8 +20,8 @@ body {
 
 .location, .temperature {
 
-    height: 30vh;
-    width: 40%;
+    height: 15vh;
+    width: 30%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -52,6 +52,6 @@ body {
 
 .degree-section h2 {
 
-    font-size: 40px;
+    font-size: 80px;
 
 }

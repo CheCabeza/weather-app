@@ -8,15 +8,31 @@ window.addEventListener("load", () => {
     const temperatureSection = document.querySelector(".temperature");
     const temperatureSpan = document.querySelector (".temperature span")
 
+    
     if (navigator.geolocation) {
-
+        
         navigator.geolocation.getCurrentPosition(position => {
-
+            
             long = position.coords.longitude;
             lat = position.coords.latitude;
-
+            
             const proxy = 'https://cors-anywhere.herokuapp.com/'; //Used proxy for localhost testing
             const api = `${proxy}https://api.darksky.net/forecast/fd9d9c6418c23d94745b836767721ad1/${lat},${long}`;
+            
+            const apiCity = `https://eu1.locationiq.com/v1/reverse.php?key=pk.7c692a9a0495cd479e9914bab4753e69&lat=${lat}&lon=${long}&format=json`;
+
+            fetch(apiCity)  //fetch to get the city's name
+            .then (response => {
+            
+                return response.json();
+
+            })
+            .then (data => {
+
+                const city = data.address.city;
+                locationTimezone.textContent = city;
+            });
+
 
             fetch (api)
             .then (response => {
@@ -24,16 +40,14 @@ window.addEventListener("load", () => {
                 return response.json();
 
             })
+
             .then (data => {
                 
                 const {temperature, summary, icon} = data.currently;
-                temperatureDegree.textContent = temperature;
+                let celsius = (temperature - 32) * (5/9); //translates fahrenheit to celsius
+                
+                temperatureDegree.textContent = Math.floor(celsius);
                 temperatureDescription.textContent = summary;
-                locationTimezone.textContent = data.timezone;
-
-                //Celsius/Kelvin
-
-                let celsius = (temperature - 32) * (5/9);
 
                 setIcons(icon, document.querySelector(".icon"))
 
