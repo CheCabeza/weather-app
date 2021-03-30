@@ -2,6 +2,12 @@
 
 Small app that connects to an weather API and shows your current weather status based on your location.
 
+## API's used
+
+- LocationIQ (https://locationiq.com/)
+
+- Dark Sky (darksky.net)
+
 
 ## Usage
 
