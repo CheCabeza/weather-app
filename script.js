@@ -41,12 +41,12 @@ window.addEventListener("load", () => {
 
                     if (temperatureSpan.textContent === "F"){
                         
-                        temperatureSpan.textContent = "C&#176;";
+                        temperatureSpan.textContent = "Cº";
                         temperatureDegree.textContent = Math.floor(celsius);
                     }
                     else {
                         
-                        temperatureSpan.textContent = "F&#176;";
+                        temperatureSpan.textContent = "Fº";
                         temperatureDegree.textContent = temperature;
                 
                     }
