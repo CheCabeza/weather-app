@@ -39,7 +39,7 @@ window.addEventListener("load", () => {
 
                 temperatureSection.addEventListener ("click", () => {
 
-                    if (temperatureSpan.textContent === "F"){
+                    if (temperatureSpan.textContent === "Fº"){
                         
                         temperatureSpan.textContent = "Cº";
                         temperatureDegree.textContent = Math.floor(celsius);
