@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
             long = position.coords.longitude;
             lat = position.coords.latitude;
 
-            const proxy = 'https://cors-anywhere.herokuapp.com/';
+            const proxy = 'https://cors-anywhere.herokuapp.com/'; //Used proxy for localhost testing
             const api = `${proxy}https://api.darksky.net/forecast/fd9d9c6418c23d94745b836767721ad1/${lat},${long}`;
 
             fetch (api)
@@ -41,12 +41,12 @@ window.addEventListener("load", () => {
 
                     if (temperatureSpan.textContent === "F"){
                         
-                        temperatureSpan.textContent = "C"
+                        temperatureSpan.textContent = "C&#176;";
                         temperatureDegree.textContent = Math.floor(celsius);
                     }
                     else {
                         
-                        temperatureSpan.textContent = "F"
+                        temperatureSpan.textContent = "F&#176;";
                         temperatureDegree.textContent = temperature;
                 
                     }
