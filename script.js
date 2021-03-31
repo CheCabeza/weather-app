@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
             lat = position.coords.latitude;
             
             const proxy = 'https://cors-anywhere.herokuapp.com/'; //Used proxy for localhost testing
-            const api = `https://api.darksky.net/forecast/fd9d9c6418c23d94745b836767721ad1/${lat},${long}`;
+            const api = `${proxy}https://api.darksky.net/forecast/fd9d9c6418c23d94745b836767721ad1/${lat},${long}`;
             
             const apiCity = `https://eu1.locationiq.com/v1/reverse.php?key=pk.7c692a9a0495cd479e9914bab4753e69&lat=${lat}&lon=${long}&format=json`;
 
